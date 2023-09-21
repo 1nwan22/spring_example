@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> <!-- mybatis 문법에 맞는 코드만 할 수 있음 -->
+ 
+ <mapper namespace="com.example.lesson02.mapper.UsedGoodsMapper">
+ 	<select id="selectUsedGoodsList" resultType="com.example.lesson02.domain.UsedGoods"> 
+ 	<!-- id:Mapper의 메소드명 resultType:객체class의 주소-->
+ 		SELECT
+ 			*
+ 		FROM
+ 			`used_goods`
+ 	</select>
+ </mapper>

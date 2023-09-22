@@ -2,3 +2,21 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
+ <mapper namespace="com.example.lesson03.mapper.ReviewMapper">
+ 	<select id="selectReview" parameterType="int" resultType="com.example.lesson03.domain.Review">
+ 		SELECT
+ 		<!-- *로 다 들고 오면 나중에 DB에 필드를 추가하면 에러가 뜰 수 있음 -->
+ 			`id`
+			,`storeId`
+			,`menu`
+			,`userName`
+			,`point`
+			,`review`
+			,`createdAt`
+			,`updatedAt`
+		FROM 
+			`new_review`
+		WHERE
+			`id` = #{id}
+ 	</select>
+ </mapper>

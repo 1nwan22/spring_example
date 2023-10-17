@@ -38,5 +38,15 @@
 		ORDER BY `id` DESC
 		LIMIT 1
  	</select>
+ 	
+ 	<select id="existUserByName" parameterType="String" resultType="boolean">
+ 	<!-- 0: 거짓 // 0이 아닌 수: 참 -->
+ 		SELECT
+ 			COUNT(*)
+ 		FROM
+ 			`new_user`
+ 		WHERE
+ 			`name` = #{name}
+ 	</select>
  
  </mapper>

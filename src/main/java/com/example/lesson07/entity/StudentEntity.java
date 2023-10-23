@@ -21,8 +21,8 @@ import lombok.ToString;
 @AllArgsConstructor // 파라미터가 모두 있는 생성자
 @NoArgsConstructor // 파라미터 없는 기본 생성자
 @Getter
-@Builder // setter의 대용 
-@Entity // 이 객체는 엔티티다. (JPA-DB와 통신 사이)
+@Builder(toBuilder = true) // setter의 대용, toBuilder true 수정 허용
+@Entity(name="new_student") // 이 객체는 엔티티다. (JPA-DB와 통신 사이)
 @Table(name="new_student")
 public class StudentEntity {
 	@Id  // pk

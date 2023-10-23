@@ -27,4 +27,20 @@ public class Lesson07Ex01RestController {
 		// 지금 들어간 id 값도 바로 꺼낼 수 있다. getId(); select도 바로 해주는 것
 		return studentBO.addStudent(name, phoneNumber, email, dreamJob);
 	}
+	
+	// U: update
+	@GetMapping("/2")
+	public StudentEntity update() {
+		// id:4 dreamJob을 변경
+		// JSON
+		return studentBO.updateStudentDreamJobById(4, "디자이너");
+	}
+	
+	// D: delete
+	@GetMapping("/3")
+	public String delete() {
+		// id:7
+		studentBO.deleteStudentById(7);
+		return "삭제 완료";
+	}
 }
